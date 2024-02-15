@@ -1,27 +1,15 @@
 # XM Cloud Starter Kit (Next JS)
 
-## QUICK START
+This solution is a fork of the official xmcloud foundation head starter kit. It's intended purpose is to showcase how you can get started on working with SXA content replacement tokens in a xm cloud solution.
 
-1. In an ADMIN terminal:
+Because making changes to the platform is an absolute no-go this solution focuses on getting the work done on the Nextjs side of things.
 
-    ```ps1
-    .\init.ps1 -InitEnv -LicenseXmlPath "C:\path\to\license.xml" -AdminPassword "DesiredAdminPassword"
-    ```
+There's 3 files of interest which make this solution work:
+`src\sxastarter\src\lib\functions\replacecontent.ts`
+`src\sxastarter\src\lib\functions\sitecore-type-check.ts`
+`src\sxastarter\src\lib\page-props-factory\plugins\content-replace.ts`
 
-2. Restart your terminal and run:
+The page-props-factory plugin is what makes it all come together.
 
-    ```ps1
-    .\up.ps1
-    ```
-
-3. Follow the instructions to [deploy to XM Cloud](#deploy-to-xmcloud)
-
-4. Create Edge token and [query from edge](#query-edge)
-
-*** 
-
-## About this Solution
-This solution is designed to help developers learn and get started quickly
-with XMCLoud + SXA.
-
-
+This solution assumes You're placing the content tokens inside the dictionary of your site and that you utilize the tokens as follows: `$(tokenName)`.
+If no token is present inside the dictionary it will just render `$(tokenName)` as expected.
